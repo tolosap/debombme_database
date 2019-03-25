@@ -1,0 +1,59 @@
+Usuario as user
+----
+UsuarioID PK int
+Nombre string
+Password string
+
+Usuarios_Bombas
+----
+UsuarioFK PK int FK >- Usuario.UsuarioID
+BombaFK PK int FK >- bmb.BombaID
+
+Bomba as bmb
+----
+BombaID PK int
+Puntuacion int
+Dificultad int
+BotonFK int FK >- Mod_Boton.BotonID
+PasswordFK int FK >- Mod_Password.PasswordID
+SimonFK int FK >- Mod_Simon.SimonID
+ContadorFK int FK >- Mod_Contador.ContadorID
+TemporizadorFK int FK >- Mod_Temporizador.TempoID
+
+Mod_Boton as but
+----
+BotonID PK int
+Texto string
+Color string
+Valor int
+
+Mod_Password as passw
+----
+PasswordID PK int
+Texto string
+
+Mod_Simbolos as simb
+----
+SimboloID PK int
+Simbolo string
+
+Mod_Simon as sim
+----
+SimonID PK int
+Secuencia string
+
+Mod_Contador as cont
+----
+ContadorID PK int
+Valor int
+
+Mod_Temporizador as tempo
+----
+TempoID PK int
+Valor int
+
+Bombas_Simbolos
+----
+BombaFK PK int  FK >- bmb.BombaID
+SimboloFK PK int FK >- simb.SimboloID
+
